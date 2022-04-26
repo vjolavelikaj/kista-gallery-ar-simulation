@@ -8,11 +8,11 @@ public class DestroyCharacters : MonoBehaviour
     {
         // if out of given bounds then destroy
         if (transform.position.magnitude > bounds) {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter(Collision collision) {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
