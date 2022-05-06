@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 2369712856593335393, guid: 730000931cae1454c8083362445e8f75,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2369712856593335393, guid: 730000931cae1454c8083362445e8f75,
         type: 3}
@@ -350,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 8937081094798231296, guid: 8a47bc9871c1a4442b18b8a1b027a05d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8937081094798231296, guid: 8a47bc9871c1a4442b18b8a1b027a05d,
         type: 3}
@@ -543,7 +543,7 @@ PrefabInstance:
     - target: {fileID: 7706473263717844791, guid: bda9b0031f8f38e4e98e7780f1fea9b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7706473263717844791, guid: bda9b0031f8f38e4e98e7780f1fea9b8,
         type: 3}
@@ -638,7 +638,7 @@ PrefabInstance:
     - target: {fileID: 1036657032329175332, guid: 66b2f2e009eba4371915fd8633c88c7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1036657032329175332, guid: 66b2f2e009eba4371915fd8633c88c7a,
         type: 3}
@@ -1110,11 +1110,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 452531826}
   - {fileID: 665177770}
   - {fileID: 1665962892}
   - {fileID: 1509416843}
   - {fileID: 1958659296}
-  - {fileID: 452531826}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -1177,7 +1177,7 @@ PrefabInstance:
     - target: {fileID: 1036657032329175332, guid: 66b2f2e009eba4371915fd8633c88c7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1036657032329175332, guid: 66b2f2e009eba4371915fd8633c88c7a,
         type: 3}
