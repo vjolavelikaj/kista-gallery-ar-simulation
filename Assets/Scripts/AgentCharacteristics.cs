@@ -19,7 +19,7 @@ public class AgentCharacteristics : MonoBehaviour
 
     public bool destroyActive;
     private float startSpeed;
-    private bool slowDowned;
+    private bool slowOrFaster;
     void Start()
     {
         // Cache agent component and destination
@@ -55,10 +55,10 @@ public class AgentCharacteristics : MonoBehaviour
             agent.gameObject.SetActive(false);
         }
         
-        if (slowDowned == true)
+        if (slowOrFaster)
         {
             agent.speed = startSpeed;
-            print("worked");
+            
         }
 
 
@@ -70,9 +70,14 @@ public class AgentCharacteristics : MonoBehaviour
     {                                                              
         if(other.CompareTag("NormalDoor"))
         { 
-            agent.speed = agent.speed / 2;
-            slowDowned = true;
-            print("checked");
+            agent.speed /= 2;
+            slowOrFaster = true;
+        }
+        
+        if(other.CompareTag("AutoDoor"))
+        { 
+            agent.speed *= 2;
+            slowOrFaster = true;
         }
         
 

@@ -39,6 +39,6 @@ public class Spawner : MonoBehaviour
 
     public void Spawn() {
         character = charGameObjects[Random.Range(0, charGameObjects.Count)];
-        GameObject.Instantiate(character, targetModel.transform.position, character.transform.rotation); 
+        GameObject.Instantiate(character, targetModel.transform.position, character.transform.rotation);
     }
 }
