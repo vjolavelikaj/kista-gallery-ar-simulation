@@ -1870,9 +1870,10 @@ GameObject:
   - component: {fileID: 2369712856585923573}
   - component: {fileID: 1665962894}
   - component: {fileID: 1665962895}
+  - component: {fileID: 1665962893}
   m_Layer: 0
   m_Name: Male 2
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1957,6 +1958,19 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: a8555c0cff30527479e32562cef9141f, type: 2}
   movement: {fileID: 9100000, guid: eb79e3fd0dd669f40a90a984b92a0ccf, type: 2}
   destroyActive: 0
+--- !u!65 &1665962893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369712856593308033}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2369712856593308035
 GameObject:
   m_ObjectHideFlags: 0
