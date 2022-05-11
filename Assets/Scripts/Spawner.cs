@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // this is the prefab which will be spawned
-    // public GameObject prefab;
-
     // this is ModelTarget object added from Vuforia menu
     public GameObject targetModel;
 
     // time interval in seconds to spawn cars
     public float interval = 5f;
     
+    // Possible characters to spawn
     public List<GameObject> charGameObjects = new List<GameObject>();
-   // public List<GameObject> destGameObjects = new List<GameObject>();
 
-   // Transform agentPosition;
+    // Possible starting points
+    public List<Transform> startGameObjects = new List<Transform>();
+
+    //Transform agentPosition;
     GameObject character;
+
+   // Transform startPosition;
+    Transform startPosition;
+
+    private AgentCharacteristics agentCharacteristics;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +44,9 @@ public class Spawner : MonoBehaviour
 
     public void Spawn() {
         character = charGameObjects[Random.Range(0, charGameObjects.Count)];
-        GameObject.Instantiate(character, targetModel.transform.position, character.transform.rotation); 
+        startPosition = startGameObjects[Random.Range(0, startGameObjects.Count)];
+        var iniCharacter = GameObject.Instantiate(character, startPosition.position, startPosition.rotation);
+        agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics>();
+        agentCharacteristics.startPoint = startPosition;
     }
 }

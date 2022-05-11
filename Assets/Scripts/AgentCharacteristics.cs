@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,8 +9,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentCharacteristics : MonoBehaviour
 {
-    
-    public Transform target;
+    [HideInInspector] public Transform startPoint;
+
+    public List<Transform> targetsGameObjects = new List<Transform>();
+    public List<Transform> exitGameObjects = new List<Transform>();
     public RuntimeAnimatorController idle;
     public RuntimeAnimatorController movement;
     public bool destroyActive;
@@ -18,9 +21,10 @@ public class AgentCharacteristics : MonoBehaviour
     private bool slowOrFaster;
     private float speedCheck;
     private Animator animator;
-
+    private bool targetExists = true;
     Vector3 destination;
     NavMeshAgent agent;
+    Transform targetDestination;
 
     void Start()
     {
@@ -28,16 +32,28 @@ public class AgentCharacteristics : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         destination = agent.destination;
         animator = GetComponent<Animator>();
-        agent.SetDestination(target.position);
         startSpeed = agent.speed;
+
+        if (targetsGameObjects.Count == 0)
+        {
+            targetExists = false;
+            exitGameObjects.Remove(startPoint);
+            targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
+            agent.SetDestination(targetDestination.position);
+        }
+        else
+        {
+            targetDestination = targetsGameObjects[0];
+            agent.SetDestination(targetDestination.position);
+        }
     }
 
     void Update()
     {
         // Update destination if the target moves one unit
-        if (Vector3.Distance(destination, target.position) > 1)
+        if (Vector3.Distance(destination, targetDestination.position) > 1)
         {
-            destination = target.position;
+            destination = targetDestination.position;
             agent.destination = destination;
             animator.runtimeAnimatorController = movement;
         }
