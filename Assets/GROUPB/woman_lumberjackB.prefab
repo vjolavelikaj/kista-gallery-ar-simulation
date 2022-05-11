@@ -948,8 +948,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 499602973295605233}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.19
-  m_Speed: 10
+  m_Radius: 0.2
+  m_Speed: 12
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314ae880566c341578bc5a5941bb1c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 282335415213203904, guid: 352336fcac04942329ffb3cf2edd13bb, type: 3}
+  target: {fileID: 9011334813507939454, guid: 352336fcac04942329ffb3cf2edd13bb, type: 3}
   idle: {fileID: 9100000, guid: 5c831ac43351f4d6e9acab88319be7fb, type: 2}
   movement: {fileID: 9100000, guid: 5b15f52213456421ba6dd9b593325974, type: 2}
   destroyActive: 1
@@ -1004,8 +1004,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 3.7, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &569076833828047616
 GameObject:
   m_ObjectHideFlags: 0

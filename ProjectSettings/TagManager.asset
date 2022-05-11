@@ -7,6 +7,8 @@ TagManager:
   - Character
   - NormalDoor
   - AutoDoor
+  - SlowDown
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

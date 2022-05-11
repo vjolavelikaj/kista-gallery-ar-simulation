@@ -20,6 +20,7 @@ public class AgentCharacteristics : MonoBehaviour
     public bool destroyActive;
     private float startSpeed;
     private bool slowOrFaster;
+    private float speedCheck;
     void Start()
     {
         // Cache agent component and destination
@@ -50,6 +51,7 @@ public class AgentCharacteristics : MonoBehaviour
 
         }
         
+        //Getting the clone agent destroy
         if (agent.remainingDistance <= 6 && agent.name.Contains("(Clone)") && destroyActive) {
             Destroy(agent.gameObject, 1);
             agent.gameObject.SetActive(false);
@@ -58,30 +60,48 @@ public class AgentCharacteristics : MonoBehaviour
         if (slowOrFaster)
         {
             agent.speed = startSpeed;
-            
         }
 
+       
 
 
     }
 
     
     private void OnTriggerEnter(Collider other)                    
-    {                                                              
-        if(other.CompareTag("NormalDoor"))
+    {           
+        
+        if(other.CompareTag("SlowDown"))
         { 
             agent.speed /= 2;
-            slowOrFaster = true;
+        }
+        
+        if(other.CompareTag("NormalDoor"))
+        {
+            StartCoroutine("waitSomeSeconds");
+        }
+        
+        if(other.CompareTag("SpeedUp"))
+        {
+            agent.speed *= 2;
         }
         
         if(other.CompareTag("AutoDoor"))
-        { 
-            agent.speed *= 2;
-            slowOrFaster = true;
+        {
+            StartCoroutine("waitSomeSeconds");
         }
         
+    }
 
-    }                                                              
+    IEnumerator waitSomeSeconds()
+    {
+        yield return new WaitForSeconds(1);
+        slowOrFaster = true;
+    }
+    
+  
+    
+   
    
 
 }
