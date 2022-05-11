@@ -4,49 +4,53 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // this is ModelTarget object added from Vuforia menu
-    public GameObject targetModel;
+	// This is ModelTarget object added from Vuforia menu
+	public GameObject targetModel;
 
-    // time interval in seconds to spawn cars
-    public float interval = 5f;
-    
-    // Possible characters to spawn
-    public List<GameObject> charGameObjects = new List<GameObject>();
+	// Time interval in seconds to spawn cars
+	public float interval = 5f;
 
-    // Possible starting points
-    public List<Transform> startGameObjects = new List<Transform>();
+	// Possible characters to spawn
+	public List<GameObject> charGameObjects = new List<GameObject>();
 
-    //Transform agentPosition;
-    GameObject character;
+	// Possible starting points
+	public List<Transform> startGameObjects = new List<Transform>();
 
-   // Transform startPosition;
-    Transform startPosition;
+	// Transform agentPosition;
+	GameObject character;
 
-    private AgentCharacteristics agentCharacteristics;
+	// Transform startPosition;
+	Transform startPosition;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        InvokeRepeating("SpawnChar",1f,interval);
-    }
+	private AgentCharacteristics agentCharacteristics;
 
-    private bool IsModelTracked() {
+	// Start is called before the first frame update
+	void Start()
+	{
+		InvokeRepeating("SpawnChar", 1f, interval);
+	}
 
-        return targetModel.GetComponentInChildren<MeshRenderer>().enabled;
+	private bool IsModelTracked()
+	{
 
-    }
+		return targetModel.GetComponentInChildren<MeshRenderer>().enabled;
 
-    private void SpawnChar() {
-        if (IsModelTracked()) {
-            Spawn();
-        }
-    }
+	}
 
-    public void Spawn() {
-        character = charGameObjects[Random.Range(0, charGameObjects.Count)];
-        startPosition = startGameObjects[Random.Range(0, startGameObjects.Count)];
-        var iniCharacter = GameObject.Instantiate(character, startPosition.position, startPosition.rotation);
-        agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics>();
-        agentCharacteristics.startPoint = startPosition;
-    }
+	private void SpawnChar()
+	{
+		if (IsModelTracked())
+		{
+			Spawn();
+		}
+	}
+
+	public void Spawn()
+	{
+		character = charGameObjects[Random.Range(0, charGameObjects.Count)];
+		startPosition = startGameObjects[Random.Range(0, startGameObjects.Count)];
+		var iniCharacter = GameObject.Instantiate(character, startPosition.position, startPosition.rotation);
+		agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics>();
+		agentCharacteristics.startPoint = startPosition;
+	}
 }
