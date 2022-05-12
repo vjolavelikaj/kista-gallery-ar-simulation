@@ -37,7 +37,7 @@ public class AgentCharacteristics : MonoBehaviour
 		if (targetsGameObjects.Count == 0)
 		{
 			targetExists = false;
-			exitGameObjects.Remove(startPoint);
+			//exitGameObjects.Remove(startPoint);
 			targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
 			agent.SetDestination(targetDestination.position);
 		}

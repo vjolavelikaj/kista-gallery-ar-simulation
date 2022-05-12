@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6358473779163519149}
   - component: {fileID: 1862248704208244179}
   - component: {fileID: 5186292697862973913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StartExitObjectA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5687615233452617081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.31}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.05, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

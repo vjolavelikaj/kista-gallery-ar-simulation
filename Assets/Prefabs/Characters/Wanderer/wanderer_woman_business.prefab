@@ -18424,7 +18424,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.2
-  m_Speed: 10
+  m_Speed: 0.05
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -18479,8 +18479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   targetsGameObjects:
-  - {fileID: 3174387747280256078, guid: 452516e4be3573c4a8ec70770aeb41fb, type: 3}
-  - {fileID: 8726057803795240874, guid: 9c052fc828e071a4a8ba5fb91f37693b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   exitGameObjects:
   - {fileID: 1065066595213227080, guid: aaf90e8429aa706499d797bef11ae6f8, type: 3}
   - {fileID: 4532110824571042870, guid: 600f1df3e1ad2db459110772a8859ab1, type: 3}
