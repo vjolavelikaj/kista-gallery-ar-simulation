@@ -9690,7 +9690,7 @@ Transform:
   m_GameObject: {fileID: 4893951940365963241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.3, y: 3.15, z: -125.2}
-  m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 0.009999996}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 4893951941272660115}
   - {fileID: 4893951941232503703}
@@ -9707,7 +9707,7 @@ Animator:
   m_GameObject: {fileID: 4893951940365963241}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a4a3ba617ed9c5946bb76844ec1ef299, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -9725,11 +9725,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 4893951940365963241}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.2
-  m_Speed: 0.05
-  m_Acceleration: 8
+  m_Radius: 0.4
+  m_Speed: 0.02
+  m_Acceleration: 0.8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 12
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -9788,7 +9788,7 @@ MonoBehaviour:
   - {fileID: 1243037990829837698, guid: c1fb27780d2d1df448dd1586cabb7674, type: 3}
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
-  destroyActive: 0
+  destroyActive: 1
 --- !u!1 &4893951940370620319
 GameObject:
   m_ObjectHideFlags: 0

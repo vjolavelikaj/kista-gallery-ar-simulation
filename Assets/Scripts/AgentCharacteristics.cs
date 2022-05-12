@@ -37,7 +37,7 @@ public class AgentCharacteristics : MonoBehaviour
 		if (targetsGameObjects.Count == 0)
 		{
 			targetExists = false;
-			//exitGameObjects.Remove(startPoint);
+			exitGameObjects.Remove(startPoint);
 			targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
 			agent.SetDestination(targetDestination.position);
 		}
@@ -61,14 +61,15 @@ public class AgentCharacteristics : MonoBehaviour
 		// Check if we've reached the destination
 		// https://answers.unity.com/questions/324589/how-can-i-tell-when-a-navmesh-has-reached-its-dest.html
 		// https://stackoverflow.com/questions/60810676/unity-navmesh-event-on-navigation-end
-		if (agent.remainingDistance <= 4)
+		if (agent.remainingDistance <= 0.04)
 		{
 			animator.runtimeAnimatorController = idle;
 		}
 
 		//Getting the clone agent destroy
-		if (agent.remainingDistance <= 6 && agent.name.Contains("(Clone)") && destroyActive)
+		if (agent.remainingDistance <= 0.006 && agent.name.Contains("(Clone)") && destroyActive)
 		{
+			StartCoroutine("waitSomeSeconds"); 
 			Destroy(agent.gameObject, 1);
 			agent.gameObject.SetActive(false);
 		}
