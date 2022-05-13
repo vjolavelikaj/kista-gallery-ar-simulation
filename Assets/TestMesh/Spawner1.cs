@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class Spawner1 : MonoBehaviour
 {
@@ -53,5 +56,11 @@ public class Spawner1 : MonoBehaviour
 		agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics1>();
 		agentCharacteristics.startPoint = startPosition;
 		iniCharacter.SetActive(true);
+
+		var lowScalCharacter = GameObject.Instantiate(character, startPosition.position / 100, startPosition.rotation);
+		Destroy(lowScalCharacter.GetComponent<AgentCharacteristics1>());
+		Destroy(lowScalCharacter.GetComponent<NavMeshAgent>());
+		lowScalCharacter.SetActive(true);
+		lowScalCharacter.transform.localScale = lowScalCharacter.transform.localScale / 100;
 	}
 }
