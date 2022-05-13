@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SamplesResources/Scenes/0-Main.unity
     guid: a09cb257d566c489595b16ab37547666
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: da0ad55af6266e94b88077fd8398898b
+  - enabled: 1
+    path: Assets/Scenes/TestNavmesh.unity
+    guid: cd3c29a480a30c64ca0f462713207698
   m_configObjects: {}
