@@ -55,7 +55,7 @@ public class AgentCharacteristics : MonoBehaviour
 	void Update()
 	{
 		// Update destination if the target moves one unit
-		if (Vector3.Distance(destination, targetDestination.position) > 1)
+		if (Vector3.Distance(destination, targetDestination.position) > 0.01)
 		{
 			destination = targetDestination.position;
 			agent.destination = destination;
@@ -86,10 +86,10 @@ public class AgentCharacteristics : MonoBehaviour
 			}
 			else
 			{
-				if (agent.remainingDistance <= 0.001)
+				if (agent.remainingDistance <= 0.0001)
 				{
 					animator.runtimeAnimatorController = idle;
-					StartCoroutine("waitSomeSeconds");
+					//StartCoroutine("waitSomeSeconds");
 					Destroy(agent.gameObject, 1);
 					agent.gameObject.SetActive(false);
 				}
