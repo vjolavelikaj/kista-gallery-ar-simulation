@@ -130,6 +130,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1718949623}
     m_Modifications:
+    - target: {fileID: 3158006582939921413, guid: daa76edc91c3d3a40b0937b694154bfe,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158006582939921413, guid: daa76edc91c3d3a40b0937b694154bfe,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3158006582939921415, guid: daa76edc91c3d3a40b0937b694154bfe,
         type: 3}
       propertyPath: m_RootOrder
@@ -199,6 +209,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wanderer_woman_skate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158006582939921658, guid: daa76edc91c3d3a40b0937b694154bfe,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa76edc91c3d3a40b0937b694154bfe, type: 3}
@@ -421,7 +436,7 @@ BoxCollider:
   m_GameObject: {fileID: 303863754}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -565,13 +580,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174387747280256078, guid: 452516e4be3573c4a8ec70770aeb41fb,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174387747280256078, guid: 452516e4be3573c4a8ec70770aeb41fb,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04857
       objectReference: {fileID: 0}
     - target: {fileID: 3174387747280256078, guid: 452516e4be3573c4a8ec70770aeb41fb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0254
       objectReference: {fileID: 0}
     - target: {fileID: 3174387747280256078, guid: 452516e4be3573c4a8ec70770aeb41fb,
         type: 3}
@@ -631,35 +651,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 394188569}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &395336924
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'automatic_door_6_3_cmMaterial
-
-    2064492'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6130b71b30b84d2a87d85d93bfdbc317, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &395495278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -667,6 +658,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1718949623}
     m_Modifications:
+    - target: {fileID: 3994260869306186288, guid: a87dc99f303f3a64cac41798d0743e56,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994260869306186288, guid: a87dc99f303f3a64cac41798d0743e56,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3994260869306186290, guid: a87dc99f303f3a64cac41798d0743e56,
         type: 3}
       propertyPath: m_RootOrder
@@ -737,6 +738,11 @@ PrefabInstance:
       propertyPath: targetsGameObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1913497450}
+    - target: {fileID: 3994260869306186295, guid: a87dc99f303f3a64cac41798d0743e56,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a87dc99f303f3a64cac41798d0743e56, type: 3}
 --- !u!4 &395495279 stripped
@@ -928,7 +934,7 @@ BoxCollider:
   m_GameObject: {fileID: 537695198}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1120,6 +1126,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3718265567213658585, guid: 85ecfc2ca507df04290e992538163bb9,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718265567213658586, guid: 85ecfc2ca507df04290e992538163bb9,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718265567213658586, guid: 85ecfc2ca507df04290e992538163bb9,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3718265567213658590, guid: 85ecfc2ca507df04290e992538163bb9,
         type: 3}
       propertyPath: m_Name
@@ -1187,7 +1208,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 395336924}
+  - {fileID: 1709759082}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1448,10 +1469,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4875515448416910308, guid: 0b852f8ad464ea744ac191497deb8cdd,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5166680037631136095, guid: 0b852f8ad464ea744ac191497deb8cdd,
         type: 3}
       propertyPath: m_Name
       value: ATM_man_reporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906451048734870870, guid: 0b852f8ad464ea744ac191497deb8cdd,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906451048734870870, guid: 0b852f8ad464ea744ac191497deb8cdd,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7024515353338220079, guid: 0b852f8ad464ea744ac191497deb8cdd,
         type: 3}
@@ -1498,7 +1534,7 @@ Material:
     m_Floats: []
     m_Colors: []
   m_BuildTextureStacks: []
---- !u!21 &720329856
+--- !u!21 &708705280
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1507,7 +1543,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'atm_3_45_cmMaterial
 
-    2070694'
+    2563610'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1624,6 +1660,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1718949623}
     m_Modifications:
+    - target: {fileID: 3356850334229506599, guid: 782334a54e74e7a439fefa8b3a65b694,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356850334229506599, guid: 782334a54e74e7a439fefa8b3a65b694,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 3983475066942413096, guid: 782334a54e74e7a439fefa8b3a65b694,
         type: 3}
       propertyPath: m_Name
@@ -1634,6 +1680,11 @@ PrefabInstance:
       propertyPath: targetsGameObjects.Array.data[0]
       value: 
       objectReference: {fileID: 757481450}
+    - target: {fileID: 8620680345139115460, guid: 782334a54e74e7a439fefa8b3a65b694,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8693597682346403866, guid: 782334a54e74e7a439fefa8b3a65b694,
         type: 3}
       propertyPath: m_RootOrder
@@ -1765,6 +1816,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4515282976542832796, guid: 8986a76e873b65d4b84a1e988b02c918,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515282976542832796, guid: 8986a76e873b65d4b84a1e988b02c918,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515282976542832799, guid: 8986a76e873b65d4b84a1e988b02c918,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4515282976542832800, guid: 8986a76e873b65d4b84a1e988b02c918,
         type: 3}
       propertyPath: m_Name
@@ -1840,6 +1906,21 @@ PrefabInstance:
       propertyPath: targetsGameObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1913497450}
+    - target: {fileID: 2353441608453764028, guid: 121752befa1c51940a14fa85a4bbe866,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353441608453764028, guid: 121752befa1c51940a14fa85a4bbe866,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2353441608453764029, guid: 121752befa1c51940a14fa85a4bbe866,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2353441608453764030, guid: 121752befa1c51940a14fa85a4bbe866,
         type: 3}
       propertyPath: m_RootOrder
@@ -1970,6 +2051,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508820374063779601, guid: 109e00eee31f46c488180c9a9f07f75c,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508820374063779601, guid: 109e00eee31f46c488180c9a9f07f75c,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508820374063779602, guid: 109e00eee31f46c488180c9a9f07f75c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3508820374063779604, guid: 109e00eee31f46c488180c9a9f07f75c,
         type: 3}
@@ -2204,6 +2300,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &956467604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7060761657775278889, guid: fc899c319ecb04438b85ad1e238431b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 757481449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &956467605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956467604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25113678, y: 0.2892352, z: 2.89}
+  m_Center: {x: 0.000000059604645, y: -0.018479604, z: 0.2}
 --- !u!1001 &966228603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2271,6 +2386,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ATM_woman_business
       objectReference: {fileID: 0}
+    - target: {fileID: 3902998646892215666, guid: 3d88fba081cd2e84a856bc4ea3ee87a3,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902998646892215666, guid: 3d88fba081cd2e84a856bc4ea3ee87a3,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4228467118905640255, guid: 3d88fba081cd2e84a856bc4ea3ee87a3,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4929038226521333800, guid: 3d88fba081cd2e84a856bc4ea3ee87a3,
         type: 3}
       propertyPath: targetsGameObjects.Array.data[0]
@@ -2322,35 +2452,6 @@ Transform:
   m_Father: {fileID: 1561831626}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1068095612
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'current_door_6_3_cmMaterial
-
-    2075856'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 814495fbebcb45609ad2f7372e0d10e5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1100658593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2363,6 +2464,11 @@ PrefabInstance:
       propertyPath: targetsGameObjects.Array.data[0]
       value: 
       objectReference: {fileID: 757481450}
+    - target: {fileID: 2219751039413210748, guid: 27aadc8a4fce2e34695f19ddfe29f889,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3064914080132586857, guid: 27aadc8a4fce2e34695f19ddfe29f889,
         type: 3}
       propertyPath: m_RootOrder
@@ -2422,6 +2528,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ATM_woman_metalhead
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625312706894255823, guid: 27aadc8a4fce2e34695f19ddfe29f889,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625312706894255823, guid: 27aadc8a4fce2e34695f19ddfe29f889,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27aadc8a4fce2e34695f19ddfe29f889, type: 3}
@@ -2631,7 +2747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetModel: {fileID: 1561831622}
-  interval: 1
+  interval: 2
   charGameObjects:
   - {fileID: 5831013086278650533}
   - {fileID: 625284165}
@@ -2822,6 +2938,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: walker_man_reporter
       objectReference: {fileID: 0}
+    - target: {fileID: 5937002715830633773, guid: c0496241d186c2d4b8067bd9858198ee,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937002715830633774, guid: c0496241d186c2d4b8067bd9858198ee,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937002715830633774, guid: c0496241d186c2d4b8067bd9858198ee,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0496241d186c2d4b8067bd9858198ee, type: 3}
 --- !u!4 &1233979044 stripped
@@ -2847,6 +2978,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walker_man_casual
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550387030328167494, guid: 6091d6358ffcfcd4593cea465c1dc087,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550387030328167495, guid: 6091d6358ffcfcd4593cea465c1dc087,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550387030328167495, guid: 6091d6358ffcfcd4593cea465c1dc087,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7550387030328167513, guid: 6091d6358ffcfcd4593cea465c1dc087,
         type: 3}
@@ -2951,7 +3097,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331331268}
-  m_Mesh: {fileID: 1629596260}
+  m_Mesh: {fileID: 1387426053}
 --- !u!23 &1331331270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2971,7 +3117,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 720329856}
+  - {fileID: 708705280}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3249,6 +3395,170 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!43 &1387426053
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ImageTargetMesh2508782
+  serializedVersion: 10
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.015, y: 0, z: 0.0225}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200020001000300
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 128
+    _typelessdata: 8fc275bc00000000ec51b8bc000000000000803f0000000000000000000000008fc275bc00000000ec51b83c000000000000803f00000000000000000000803f8fc2753c00000000ec51b8bc000000000000803f000000000000803f000000008fc2753c00000000ec51b83c000000000000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.015, y: 0, z: 0.0225}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &1406084294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3407,7 +3717,7 @@ BoxCollider:
   m_GameObject: {fileID: 1501017565}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3498,6 +3808,21 @@ PrefabInstance:
       propertyPath: targetsGameObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1913497450}
+    - target: {fileID: 762777109816807596, guid: 58317df7b1eae084abc08d9435f39b23,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762777109816807597, guid: 58317df7b1eae084abc08d9435f39b23,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 762777109816807597, guid: 58317df7b1eae084abc08d9435f39b23,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 762777109816807599, guid: 58317df7b1eae084abc08d9435f39b23,
         type: 3}
       propertyPath: m_RootOrder
@@ -3857,6 +4182,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ATM_woman_skate
       objectReference: {fileID: 0}
+    - target: {fileID: 6289272330168314499, guid: ededdba34589f7b47a49e130bdd4bee5,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289272330168314499, guid: ededdba34589f7b47a49e130bdd4bee5,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155895125618702746, guid: ededdba34589f7b47a49e130bdd4bee5,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ededdba34589f7b47a49e130bdd4bee5, type: 3}
 --- !u!4 &1617898198 stripped
@@ -3871,170 +4211,64 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1617898197}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1629596260
-Mesh:
+--- !u!21 &1673079136
+Material:
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh636356
-  serializedVersion: 10
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.015, y: 0, z: 0.0225}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200020001000300
-  m_VertexData:
+  m_Name: 'current_door_6_3_cmMaterial
+
+    2568774'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
     serializedVersion: 3
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 128
-    _typelessdata: 8fc275bc00000000ec51b8bc000000000000803f0000000000000000000000008fc275bc00000000ec51b83c000000000000803f00000000000000000000803f8fc2753c00000000ec51b8bc000000000000803f000000000000803f000000008fc2753c00000000ec51b83c000000000000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.015, y: 0, z: 0.0225}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 814495fbebcb45609ad2f7372e0d10e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &1709759082
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'automatic_door_6_3_cmMaterial
+
+    2557410'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6130b71b30b84d2a87d85d93bfdbc317, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1718949622
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,6 +4394,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3151171592114757558, guid: b61cfeaeb27d86644ba98149e6353772,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151171592114757559, guid: b61cfeaeb27d86644ba98149e6353772,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151171592114757559, guid: b61cfeaeb27d86644ba98149e6353772,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b61cfeaeb27d86644ba98149e6353772, type: 3}
 --- !u!4 &1723465978 stripped
@@ -4240,7 +4489,7 @@ BoxCollider:
   m_GameObject: {fileID: 1832567529}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4320,6 +4569,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: walker_woman_lumberjack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893951940365963244, guid: 8d9964b50a661714ea0f400a00373dbb,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893951940365963245, guid: 8d9964b50a661714ea0f400a00373dbb,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893951940365963245, guid: 8d9964b50a661714ea0f400a00373dbb,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4893951940365963251, guid: 8d9964b50a661714ea0f400a00373dbb,
         type: 3}
@@ -4414,13 +4678,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8726057803795240874, guid: 9c052fc828e071a4a8ba5fb91f37693b,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726057803795240874, guid: 9c052fc828e071a4a8ba5fb91f37693b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05298
       objectReference: {fileID: 0}
     - target: {fileID: 8726057803795240874, guid: 9c052fc828e071a4a8ba5fb91f37693b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12967
+      value: 0.1548
       objectReference: {fileID: 0}
     - target: {fileID: 8726057803795240874, guid: 9c052fc828e071a4a8ba5fb91f37693b,
         type: 3}
@@ -4829,7 +5098,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1068095612}
+  - {fileID: 1673079136}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4955,6 +5224,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: walker_woman_skate
       objectReference: {fileID: 0}
+    - target: {fileID: 5708922700093786854, guid: 3abc673657c01944e81441f91f3cb031,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708922700093786857, guid: 3abc673657c01944e81441f91f3cb031,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5708922700093786857, guid: 3abc673657c01944e81441f91f3cb031,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 5708922700093786859, guid: 3abc673657c01944e81441f91f3cb031,
         type: 3}
       propertyPath: m_RootOrder
@@ -5031,6 +5315,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1718949623}
     m_Modifications:
+    - target: {fileID: 2178460358260028896, guid: 2c5fec390f8156142af71e89e94f08c1,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4180174132865895848, guid: 2c5fec390f8156142af71e89e94f08c1,
         type: 3}
       propertyPath: m_RootOrder
@@ -5095,6 +5384,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ATM_man_casual
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794341484998809304, guid: 2c5fec390f8156142af71e89e94f08c1,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794341484998809304, guid: 2c5fec390f8156142af71e89e94f08c1,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c5fec390f8156142af71e89e94f08c1, type: 3}

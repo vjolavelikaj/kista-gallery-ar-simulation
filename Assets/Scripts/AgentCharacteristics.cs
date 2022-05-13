@@ -21,7 +21,9 @@ public class AgentCharacteristics : MonoBehaviour
 	private bool slowOrFaster;
 	private float speedCheck;
 	private Animator animator;
-	private bool targetExists = true;
+	private int numberOfTargets;
+	private int currentTarget;
+	private bool targetExists;
 	Vector3 destination;
 	NavMeshAgent agent;
 	Transform targetDestination;
@@ -33,8 +35,8 @@ public class AgentCharacteristics : MonoBehaviour
 		destination = agent.destination;
 		animator = GetComponent<Animator>();
 		startSpeed = agent.speed;
-
-		if (targetsGameObjects.Count == 0)
+		numberOfTargets = targetsGameObjects.Count;
+		if (numberOfTargets == 0)
 		{
 			targetExists = false;
 			exitGameObjects.Remove(startPoint);
@@ -43,6 +45,8 @@ public class AgentCharacteristics : MonoBehaviour
 		}
 		else
 		{
+			targetExists = true;
+			currentTarget = 0;
 			targetDestination = targetsGameObjects[0];
 			agent.SetDestination(targetDestination.position);
 		}
@@ -61,18 +65,45 @@ public class AgentCharacteristics : MonoBehaviour
 		// Check if we've reached the destination
 		// https://answers.unity.com/questions/324589/how-can-i-tell-when-a-navmesh-has-reached-its-dest.html
 		// https://stackoverflow.com/questions/60810676/unity-navmesh-event-on-navigation-end
-		if (agent.remainingDistance <= 0.04)
+		if (agent.remainingDistance <= 0.01)
 		{
-			animator.runtimeAnimatorController = idle;
+			if (targetExists)
+			{
+				if (numberOfTargets != 0 && currentTarget + 1 < numberOfTargets)
+				{
+					StartCoroutine("waitSomeSeconds");
+					currentTarget++;
+					targetDestination = targetsGameObjects[currentTarget];
+					agent.SetDestination(targetDestination.position);
+				}
+				else
+				{
+					targetExists = false; 
+					exitGameObjects.Remove(startPoint);
+					targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
+					agent.SetDestination(targetDestination.position);
+				}
+			}
+			else
+			{
+				if (agent.remainingDistance <= 0.001)
+				{
+					animator.runtimeAnimatorController = idle;
+					StartCoroutine("waitSomeSeconds");
+					Destroy(agent.gameObject, 1);
+					agent.gameObject.SetActive(false);
+				}
+			}
+
 		}
 
 		//Getting the clone agent destroy
-		if (agent.remainingDistance <= 0.006 && agent.name.Contains("(Clone)") && destroyActive)
+		/*if (agent.remainingDistance <= 0.006 && agent.name.Contains("(Clone)") && destroyActive && !targetExists)
 		{
 			StartCoroutine("waitSomeSeconds"); 
 			Destroy(agent.gameObject, 1);
 			agent.gameObject.SetActive(false);
-		}
+		}*/
 
 		if (slowOrFaster)
 		{
@@ -106,7 +137,7 @@ public class AgentCharacteristics : MonoBehaviour
 
 	IEnumerator waitSomeSeconds()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
 		slowOrFaster = true;
 	}
 }
