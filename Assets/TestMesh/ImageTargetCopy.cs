@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScaleNavigator : MonoBehaviour
+public class ImageTargetCopy : MonoBehaviour
 {
-
     public GameObject bigScaleObject;
     private Vector3 bigScalePosition;
 
@@ -27,9 +26,10 @@ public class ScaleNavigator : MonoBehaviour
             this.transform.eulerAngles = bigScaleObject.transform.eulerAngles;
         }
         else
-		{
+        {
             Destroy(this.gameObject, 1);
             this.gameObject.SetActive(false);
         }
     }
 }
+

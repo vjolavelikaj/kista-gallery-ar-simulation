@@ -13,7 +13,6 @@ public class AgentCharacteristics1 : MonoBehaviour
 
 	public List<Transform> targetsGameObjects = new List<Transform>();
 	public List<Transform> exitGameObjects = new List<Transform>();
-	public NavMeshAgent agent;
 	public RuntimeAnimatorController idle;
 	public RuntimeAnimatorController movement;
 	public bool destroyActive;
@@ -27,6 +26,7 @@ public class AgentCharacteristics1 : MonoBehaviour
 	private bool targetExists;
 	Vector3 destination;
 	Transform targetDestination;
+	NavMeshAgent agent;
 
 	void Start()
 	{
@@ -88,22 +88,11 @@ public class AgentCharacteristics1 : MonoBehaviour
 			}
 			else
 			{
-				//if (agent.remainingDistance <= 1)
-				//{
-					Destroy(agent.gameObject, 1);
-					agent.gameObject.SetActive(false);
-				//}
+				Destroy(agent.gameObject, 1);
+				agent.gameObject.SetActive(false);
 			}
 
 		}
-
-		//Getting the clone agent destroy
-		/*if (agent.remainingDistance <= 0.006 && agent.name.Contains("(Clone)") && destroyActive && !targetExists)
-		{
-			StartCoroutine("waitSomeSeconds"); 
-			Destroy(agent.gameObject, 1);
-			agent.gameObject.SetActive(false);
-		}*/
 
 		if (slowOrFaster)
 		{

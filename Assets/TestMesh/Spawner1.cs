@@ -9,7 +9,6 @@ public class Spawner1 : MonoBehaviour
 {
 	// This is ModelTarget object added from Vuforia menu
 	public GameObject targetModel;
-	public GameObject cube;
 
 	// Time interval in seconds to spawn cars
 	public float interval = 5f;
@@ -28,8 +27,6 @@ public class Spawner1 : MonoBehaviour
 
 	private AgentCharacteristics1 agentCharacteristics;
 	private ScaleNavigator scaleNavigator;
-	public RuntimeAnimatorController idle;
-	public RuntimeAnimatorController movement;
 
 	// Start is called before the first frame update
 	void Start()
@@ -73,8 +70,6 @@ public class Spawner1 : MonoBehaviour
 
 		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
 		scaleNavigator.bigScaleObject = iniCharacter;
-		scaleNavigator.idle = idle;
-		scaleNavigator.movement = movement;
 
 	}
 }
