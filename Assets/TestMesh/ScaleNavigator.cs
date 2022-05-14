@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class ScaleNavigator : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject bigScaleObject;
+    public RuntimeAnimatorController idle, movement;
+
+    private Vector3 bigScalePosition;
+    private Animator bigAnimator;
+    private Animator smallAnimator;
+
     void Start()
     {
-        
+        bigAnimator = bigScaleObject.GetComponent<Animator>();
+        smallAnimator = this.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (bigScaleObject.activeSelf)
+        {
+            smallAnimator.runtimeAnimatorController = bigAnimator.runtimeAnimatorController;
+            bigScalePosition = bigScaleObject.transform.localPosition;
+            this.transform.localPosition = bigScalePosition / 100f;
+            
+            this.transform.eulerAngles = bigScaleObject.transform.eulerAngles;
+        }
+        else
+		{
+            Destroy(this.gameObject, 1);
+            this.gameObject.SetActive(false);
+        }
     }
 }

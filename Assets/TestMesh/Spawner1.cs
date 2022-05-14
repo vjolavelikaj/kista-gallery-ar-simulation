@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+//[RequireComponent(typeof(NavMeshAgent))]
 
 public class Spawner1 : MonoBehaviour
 {
 	// This is ModelTarget object added from Vuforia menu
 	public GameObject targetModel;
+	public GameObject cube;
 
 	// Time interval in seconds to spawn cars
 	public float interval = 5f;
@@ -26,6 +27,9 @@ public class Spawner1 : MonoBehaviour
 	Transform startPosition;
 
 	private AgentCharacteristics1 agentCharacteristics;
+	private ScaleNavigator scaleNavigator;
+	public RuntimeAnimatorController idle;
+	public RuntimeAnimatorController movement;
 
 	// Start is called before the first frame update
 	void Start()
@@ -53,14 +57,24 @@ public class Spawner1 : MonoBehaviour
 		character = charGameObjects[Random.Range(0, charGameObjects.Count)];
 		startPosition = startGameObjects[Random.Range(0, startGameObjects.Count)];
 		var iniCharacter = GameObject.Instantiate(character, startPosition.position, startPosition.rotation);
+		iniCharacter.transform.parent = targetModel.transform;
 		agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics1>();
 		agentCharacteristics.startPoint = startPosition;
 		iniCharacter.SetActive(true);
 
-		var lowScalCharacter = GameObject.Instantiate(character, startPosition.position / 100, startPosition.rotation);
-		Destroy(lowScalCharacter.GetComponent<AgentCharacteristics1>());
-		Destroy(lowScalCharacter.GetComponent<NavMeshAgent>());
-		lowScalCharacter.SetActive(true);
-		lowScalCharacter.transform.localScale = lowScalCharacter.transform.localScale / 100;
+		var lowScaleCharacter = GameObject.Instantiate(iniCharacter, startPosition.position, startPosition.transform.rotation);
+		Destroy(lowScaleCharacter.GetComponent<AgentCharacteristics1>());
+		Destroy(lowScaleCharacter.GetComponent<NavMeshAgent>());
+		Destroy(lowScaleCharacter.GetComponent<Rigidbody>());
+		lowScaleCharacter.transform.parent = targetModel.transform;
+		lowScaleCharacter.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+		lowScaleCharacter.transform.localPosition = startPosition.transform.localPosition / 100f;
+		lowScaleCharacter.transform.eulerAngles = iniCharacter.transform.eulerAngles;
+
+		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
+		scaleNavigator.bigScaleObject = iniCharacter;
+		scaleNavigator.idle = idle;
+		scaleNavigator.movement = movement;
+
 	}
 }

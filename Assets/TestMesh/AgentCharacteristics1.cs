@@ -13,6 +13,7 @@ public class AgentCharacteristics1 : MonoBehaviour
 
 	public List<Transform> targetsGameObjects = new List<Transform>();
 	public List<Transform> exitGameObjects = new List<Transform>();
+	public NavMeshAgent agent;
 	public RuntimeAnimatorController idle;
 	public RuntimeAnimatorController movement;
 	public bool destroyActive;
@@ -25,7 +26,6 @@ public class AgentCharacteristics1 : MonoBehaviour
 	private int currentTarget;
 	private bool targetExists;
 	Vector3 destination;
-	NavMeshAgent agent;
 	Transform targetDestination;
 
 	void Start()
