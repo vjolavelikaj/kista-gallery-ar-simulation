@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ScaleNavigator : MonoBehaviour
 {
-
     public GameObject bigScaleObject;
-    private Vector3 bigScalePosition;
 
+    private Vector3 bigScalePosition;
     private Animator bigAnimator;
     private Animator smallAnimator;
 

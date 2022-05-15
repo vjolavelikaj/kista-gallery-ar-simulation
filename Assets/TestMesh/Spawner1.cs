@@ -62,11 +62,8 @@ public class Spawner1 : MonoBehaviour
 		var lowScaleCharacter = GameObject.Instantiate(iniCharacter, startPosition.position, startPosition.transform.rotation);
 		Destroy(lowScaleCharacter.GetComponent<AgentCharacteristics1>());
 		Destroy(lowScaleCharacter.GetComponent<NavMeshAgent>());
-		Destroy(lowScaleCharacter.GetComponent<Rigidbody>());
 		lowScaleCharacter.transform.parent = targetModel.transform;
 		lowScaleCharacter.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
-		lowScaleCharacter.transform.localPosition = startPosition.transform.localPosition / 100f;
-		lowScaleCharacter.transform.eulerAngles = iniCharacter.transform.eulerAngles;
 
 		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
 		scaleNavigator.bigScaleObject = iniCharacter;

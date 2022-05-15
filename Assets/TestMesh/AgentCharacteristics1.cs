@@ -124,11 +124,20 @@ public class AgentCharacteristics1 : MonoBehaviour
 		}
 	}
 
-	IEnumerator waitSomeSeconds()
+	/*IEnumerator waitSomeSeconds()
 	{
 		yield return new WaitForSeconds(5);
 		slowOrFaster = true;
+	}*/
+
+	IEnumerator waitSomeSeconds()
+	{
+		agent.isStopped = true;
+		yield return new WaitForSeconds(1);
+		agent.isStopped = false;
+
 	}
+
 	IEnumerator stopSomeSeconds()
 	{
 		agent.isStopped = true;
