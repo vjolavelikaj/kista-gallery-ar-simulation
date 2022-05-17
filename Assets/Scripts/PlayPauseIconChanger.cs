@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlayPauseIconChanger : MonoBehaviour
+public class PlayPauseIconChanger : MonoBehaviour, IPointerDownHandler
 {
 	public Sprite play, playPressed, pause, pausePressed;
 	private Button btn;
@@ -31,7 +31,12 @@ public class PlayPauseIconChanger : MonoBehaviour
 		}
 	}
 
-	public void OnSelect() //NEEDS TO BE CHANGED!!! WORKS ONLY ONCE
+	private String CheckCurrentImage()
+	{
+		return transform.transform.tag;
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
 	{
 		if (CheckCurrentImage() == "Play")
 		{
@@ -41,11 +46,6 @@ public class PlayPauseIconChanger : MonoBehaviour
 		{
 			GetComponent<Image>().sprite = pausePressed;
 		}
-	}
-
-	private String CheckCurrentImage()
-	{
-		return transform.transform.tag;
 	}
 
 }
