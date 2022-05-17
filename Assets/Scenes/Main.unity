@@ -229,7 +229,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &14111298
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &205123592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &213302988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &269171642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2031,7 +2031,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!43 &545910492
 Mesh:
   m_ObjectHideFlags: 0
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!21 &683687881
 Material:
   serializedVersion: 6
@@ -3930,6 +3930,7 @@ GameObject:
   - component: {fileID: 923146560}
   - component: {fileID: 923146559}
   - component: {fileID: 923146558}
+  - component: {fileID: 923146562}
   m_Layer: 5
   m_Name: Add
   m_TagString: Untagged
@@ -4052,6 +4053,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923146556}
   m_CullTransparentMesh: 1
+--- !u!114 &923146562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923146556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5068387afd3ba144191dbaf922ab976c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerObject: {fileID: 1397745989}
 --- !u!1 &942794035
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4359,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1084728105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5045,7 +5059,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &1179485192
 GameObject:
   m_ObjectHideFlags: 0
@@ -5930,7 +5944,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1520713170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6036,7 +6050,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1537384613
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6143,7 +6157,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1538732691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6248,7 +6262,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &1567374185
 GameObject:
   m_ObjectHideFlags: 0
@@ -6445,7 +6459,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1641050910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6550,7 +6564,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1647990988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6656,7 +6670,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &1658987640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6795,7 +6809,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1001 &1716275384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6916,7 +6930,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &1754659627
 GameObject:
   m_ObjectHideFlags: 0
@@ -7164,7 +7178,7 @@ MonoBehaviour:
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
   startButton: {fileID: 607885484}
-  numberOfAgentsText: {fileID: 110983191}
+  removeCharactersGameObject: {fileID: 2059356682}
 --- !u!1 &1921456359
 GameObject:
   m_ObjectHideFlags: 0
@@ -7413,6 +7427,7 @@ GameObject:
   - component: {fileID: 2059356686}
   - component: {fileID: 2059356685}
   - component: {fileID: 2059356684}
+  - component: {fileID: 2059356688}
   m_Layer: 5
   m_Name: Remove
   m_TagString: Untagged
@@ -7535,3 +7550,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059356682}
   m_CullTransparentMesh: 1
+--- !u!114 &2059356688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059356682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423766a8f93dfa348bef0973822a0c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentCharacteristicsGameObject: {fileID: 0}

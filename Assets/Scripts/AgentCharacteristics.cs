@@ -18,7 +18,7 @@ public class AgentCharacteristics : MonoBehaviour
 	public RuntimeAnimatorController movement;
 	public bool destroyActive;
 	public GameObject startButton;
-	public Text numberOfAgentsText;
+	public GameObject removeCharactersGameObject;
 
 	private float startSpeed;
 	private bool slowOrFaster;
@@ -27,6 +27,8 @@ public class AgentCharacteristics : MonoBehaviour
 	private int numberOfTargets;
 	private int currentTarget;
 	private bool targetExists;
+	private RemoveCharacters removeCharacters;
+
 	Vector3 destination;
 	Transform targetDestination;
 	NavMeshAgent agent;
@@ -34,7 +36,10 @@ public class AgentCharacteristics : MonoBehaviour
 	void Start()
 	{
 		// Cache agent component and destination
+		removeCharacters = removeCharactersGameObject.GetComponent<RemoveCharacters>();
 		agent = GetComponent<NavMeshAgent>();
+		removeCharacters.AddCharacter(agent);
+
 		animator = GetComponent<Animator>();
 		destination = agent.destination;
 		startSpeed = agent.speed;
@@ -95,8 +100,7 @@ public class AgentCharacteristics : MonoBehaviour
 				}
 				else
 				{
-					Destroy(agent.gameObject, 1);
-					agent.gameObject.SetActive(false);
+					DestroyAgent(agent);
 				}
 
 			}
@@ -131,4 +135,10 @@ public class AgentCharacteristics : MonoBehaviour
 		animator.runtimeAnimatorController = movement;
 	}
 
+	public void DestroyAgent(NavMeshAgent nmAgent)
+	{
+		Destroy(nmAgent.gameObject, 1);
+		nmAgent.gameObject.SetActive(false);
+		removeCharacters.RemoveCharacterFromList(nmAgent);
+	}
 }

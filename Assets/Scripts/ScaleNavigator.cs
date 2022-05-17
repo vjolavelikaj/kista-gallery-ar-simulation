@@ -12,7 +12,6 @@ public class ScaleNavigator : MonoBehaviour
     private Animator smallAnimator;
     private NavMeshAgent agent;
 
-
     void Start()
     {
         agent = bigScaleObject.GetComponent<NavMeshAgent>(); 
