@@ -46,5 +46,10 @@ public class PlayPauseIconChanger : MonoBehaviour, IPointerDownHandler
 			GetComponent<Image>().sprite = pausePressed;
 		}
 	}
+	public void ResetButton()
+	{
+		GetComponent<Image>().sprite = play;
+		transform.transform.tag = "Play";
+	}
 
 }

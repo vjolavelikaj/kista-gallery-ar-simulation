@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 //[RequireComponent(typeof(NavMeshAgent))]
 
@@ -18,6 +19,8 @@ public class Spawner : MonoBehaviour
 
 	// Possible starting points
 	public List<Transform> startGameObjects = new List<Transform>();
+
+	public GameObject startButton;
 
 	// Transform agentPosition;
 	GameObject character;
@@ -36,14 +39,12 @@ public class Spawner : MonoBehaviour
 
 	private bool IsModelTracked()
 	{
-
 		return targetModel.GetComponentInChildren<MeshRenderer>().enabled;
-
 	}
 
-	private void SpawnChar()
+	public void SpawnChar()
 	{
-		if (IsModelTracked())
+		if (IsModelTracked() && startButton.transform.transform.tag == "Pause")
 		{
 			Spawn();
 		}
