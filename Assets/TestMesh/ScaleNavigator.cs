@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ScaleNavigator : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class ScaleNavigator : MonoBehaviour
     private Vector3 bigScalePosition;
     private Animator bigAnimator;
     private Animator smallAnimator;
+    private NavMeshAgent agent;
+
 
     void Start()
     {
+        agent = bigScaleObject.GetComponent<NavMeshAgent>(); 
         bigAnimator = bigScaleObject.GetComponent<Animator>();
         smallAnimator = this.GetComponent<Animator>();
     }
@@ -31,4 +35,37 @@ public class ScaleNavigator : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("SlowDown"))
+        {
+            agent.speed /= 2;
+        }
+
+        if (other.CompareTag("NormalDoor"))
+        {
+            StartCoroutine(waitSomeSeconds());
+        }
+
+        if (other.CompareTag("SpeedUp"))
+        {
+            agent.speed *= 2;
+        }
+
+        if (other.CompareTag("AutoDoor"))
+        {
+            StartCoroutine(waitSomeSeconds());
+        }
+    }
+
+    IEnumerator waitSomeSeconds()
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(1);
+        agent.isStopped = false;
+
+    }
+
 }

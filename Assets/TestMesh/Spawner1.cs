@@ -67,6 +67,5 @@ public class Spawner1 : MonoBehaviour
 
 		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
 		scaleNavigator.bigScaleObject = iniCharacter;
-
 	}
 }

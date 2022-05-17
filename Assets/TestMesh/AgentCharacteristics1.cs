@@ -59,7 +59,6 @@ public class AgentCharacteristics1 : MonoBehaviour
 		{
 			destination = targetDestination.position;
 			agent.destination = destination;
-			//animator.runtimeAnimatorController = movement;
 		}
 
 		// Check if we've reached the destination
@@ -100,44 +99,6 @@ public class AgentCharacteristics1 : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter(Collider other)
-	{
-
-		if (other.CompareTag("SlowDown"))
-		{
-			agent.speed /= 2;
-		}
-
-		if (other.CompareTag("NormalDoor"))
-		{
-			StartCoroutine("waitSomeSeconds");
-		}
-
-		if (other.CompareTag("SpeedUp"))
-		{
-			agent.speed *= 2;
-		}
-
-		if (other.CompareTag("AutoDoor"))
-		{
-			StartCoroutine("waitSomeSeconds");
-		}
-	}
-
-	/*IEnumerator waitSomeSeconds()
-	{
-		yield return new WaitForSeconds(5);
-		slowOrFaster = true;
-	}*/
-
-	IEnumerator waitSomeSeconds()
-	{
-		agent.isStopped = true;
-		yield return new WaitForSeconds(1);
-		agent.isStopped = false;
-
-	}
-
 	IEnumerator stopSomeSeconds()
 	{
 		agent.isStopped = true;
@@ -145,7 +106,6 @@ public class AgentCharacteristics1 : MonoBehaviour
 		yield return new WaitForSeconds(2);
 		agent.isStopped = false;
 		animator.runtimeAnimatorController = movement;
-
 	}
 	
 }
