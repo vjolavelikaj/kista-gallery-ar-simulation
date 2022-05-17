@@ -9,6 +9,8 @@ TagManager:
   - NormalDoor
   - SlowDown
   - SpeedUp
+  - Play
+  - Pause
   layers:
   - Default
   - TransparentFX
