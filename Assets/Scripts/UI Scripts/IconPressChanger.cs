@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class IconPressChanger : MonoBehaviour, IPointerDownHandler
 {
 	public Sprite pressed, released;
+
 	private Button btn;
 
 	void Start()
