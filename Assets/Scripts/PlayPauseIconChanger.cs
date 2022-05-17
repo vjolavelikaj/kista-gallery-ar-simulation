@@ -14,7 +14,6 @@ public class PlayPauseIconChanger : MonoBehaviour, IPointerDownHandler
 	{
 		btn = this.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
-		//btn.OnPointerDown.AddListener(OnSelect);
 	}
 
 	void TaskOnClick()
