@@ -27,6 +27,7 @@ public class AgentCharacteristics : MonoBehaviour
 	private int numberOfTargets;
 	private int currentTarget;
 	private bool targetExists;
+	private bool isWaiting;
 	private RemoveCharacters removeCharacters;
 
 	Vector3 destination;
@@ -36,6 +37,7 @@ public class AgentCharacteristics : MonoBehaviour
 	void Start()
 	{
 		// Cache agent component and destination
+		isWaiting = false;
 		removeCharacters = removeCharactersGameObject.GetComponent<RemoveCharacters>();
 		agent = GetComponent<NavMeshAgent>();
 		removeCharacters.AddCharacter(agent);
@@ -64,8 +66,11 @@ public class AgentCharacteristics : MonoBehaviour
 	{
 		if (startButton.transform.transform.tag == "Pause")
 		{
-
-			startAnimation();
+			if (!isWaiting)
+			{
+				agent.isStopped = false;
+				animator.runtimeAnimatorController = movement;
+			}
 
 			// Update destination if the target moves one unit
 			if (Vector3.Distance(destination, targetDestination.position) > 1)
@@ -112,28 +117,24 @@ public class AgentCharacteristics : MonoBehaviour
 		}
 		else
 		{
-			stopAnimation();
+			agent.isStopped = true;
+			animator.runtimeAnimatorController = idle;
 		}
 		
 	}
 
 	IEnumerator stopSomeSeconds()
 	{
-		stopAnimation();
-		yield return new WaitForSeconds(2);
-		startAnimation();
-	}
-
-	private void stopAnimation()
-	{
 		agent.isStopped = true;
 		animator.runtimeAnimatorController = idle;
-	}
-	private void startAnimation()
-	{
+		isWaiting = true;
+		yield return new WaitForSeconds(2); 
 		agent.isStopped = false;
 		animator.runtimeAnimatorController = movement;
+		isWaiting = false;
 	}
+
+	
 
 	public void DestroyAgent(NavMeshAgent nmAgent)
 	{

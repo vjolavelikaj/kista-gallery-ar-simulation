@@ -582,6 +582,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &85001979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,6 +778,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &104828133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1307,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &217738378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +1871,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &329359404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +1908,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!21 &343669917
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'atm_3_45_cmMaterial
+
+    3985258'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a1f94d67fb974b3dbf8b59c56d9eb0a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &394188569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2189,6 +2226,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &525021651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2381,35 +2420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f24cbba9eb6d64a8f1d86f02fc5c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &581956127
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'atm_3_45_cmMaterial
-
-    3252092'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a1f94d67fb974b3dbf8b59c56d9eb0a5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
+  startButton: {fileID: 670843490}
 --- !u!1 &609585031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2530,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1308694723}
+  - {fileID: 1095099332}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2728,35 +2739,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 621389155}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &629487908
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'current_door_6_3_cmMaterial
-
-    3252238'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 814495fbebcb45609ad2f7372e0d10e5, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &649012365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2953,6 +2935,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &670843490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,6 +3586,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &873650385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3796,6 +3782,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &903613454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3895,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &928998529
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'current_door_6_3_cmMaterial
+
+    3985402'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 814495fbebcb45609ad2f7372e0d10e5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &935561560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,6 +4217,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &1007768074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,6 +4386,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!21 &1095099332
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'automatic_door_6_3_cmMaterial
+
+    3985082'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6130b71b30b84d2a87d85d93bfdbc317, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1123848559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4562,6 +4610,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &1187201486
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,6 +4971,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &1248261865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4934,6 +4986,7 @@ GameObject:
   - component: {fileID: 1248261868}
   - component: {fileID: 1248261867}
   - component: {fileID: 1248261870}
+  - component: {fileID: 1248261871}
   m_Layer: 5
   m_Name: Remove
   m_TagString: Untagged
@@ -5056,6 +5109,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: {fileID: 21300000, guid: 302617ad857fabb4d8819c9c377dd230, type: 3}
   released: {fileID: 21300000, guid: 7499ffebc724b584eaf15a15c1be07af, type: 3}
+--- !u!114 &1248261871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248261865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423766a8f93dfa348bef0973822a0c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1292056792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5252,6 +5317,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &1308683729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5446,35 +5513,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
---- !u!21 &1308694723
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'automatic_door_6_3_cmMaterial
-
-    3251916'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6130b71b30b84d2a87d85d93bfdbc317, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!4 &1314491107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6614261705134194179, guid: ed91316407fd79941abc13c3c2c3a8cc,
@@ -5529,7 +5569,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 581956127}
+  - {fileID: 343669917}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5859,6 +5899,7 @@ GameObject:
   - component: {fileID: 1423444035}
   - component: {fileID: 1423444037}
   - component: {fileID: 1423444036}
+  - component: {fileID: 1423444038}
   m_Layer: 5
   m_Name: NbOfPeopleText
   m_TagString: Untagged
@@ -5927,6 +5968,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423444034}
   m_CullTransparentMesh: 1
+--- !u!114 &1423444038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423444034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2e4cce393af184783197831119b118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1435719618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,6 +6221,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &1491334061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6362,6 +6417,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &1499759254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6998,6 +7055,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &1564247886
 GameObject:
   m_ObjectHideFlags: 0
@@ -7972,7 +8031,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 629487908}
+  - {fileID: 928998529}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8293,6 +8352,7 @@ GameObject:
   - component: {fileID: 2006617951}
   - component: {fileID: 2006617950}
   - component: {fileID: 2006617953}
+  - component: {fileID: 2006617954}
   m_Layer: 5
   m_Name: Add
   m_TagString: Untagged
@@ -8415,6 +8475,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: {fileID: 21300000, guid: 5269c68c763135d408fdec0cbbcca50c, type: 3}
   released: {fileID: 21300000, guid: 15f1770752da61144ae8122f434a52bd, type: 3}
+--- !u!114 &2006617954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006617948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5068387afd3ba144191dbaf922ab976c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerObject: {fileID: 1187201486}
 --- !u!1001 &2046479562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8611,6 +8684,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1 &2063714135
 GameObject:
   m_ObjectHideFlags: 0
@@ -8624,6 +8699,7 @@ GameObject:
   - component: {fileID: 2063714138}
   - component: {fileID: 2063714137}
   - component: {fileID: 2063714140}
+  - component: {fileID: 2063714141}
   m_Layer: 5
   m_Name: Stop
   m_TagString: Untagged
@@ -8746,6 +8822,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: {fileID: 21300000, guid: c64ad3654db27d0458861ae52932d474, type: 3}
   released: {fileID: 21300000, guid: adc35ec9d8ba910418bc91dbaaa3f7c1, type: 3}
+--- !u!114 &2063714141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063714135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f9e8f2b82184445b092fb7e86730a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stopWatchObject: {fileID: 527558264}
+  playPauseIconChangerObject: {fileID: 670843490}
 --- !u!1 &2103112920
 GameObject:
   m_ObjectHideFlags: 0
@@ -8976,6 +9066,8 @@ MonoBehaviour:
   idle: {fileID: 9100000, guid: d7ba639bc6e02c94f9c03b5d4d285e5a, type: 2}
   movement: {fileID: 9100000, guid: ea760c0d5816e6442a7c3457ebafa877, type: 2}
   destroyActive: 1
+  startButton: {fileID: 670843490}
+  removeCharactersGameObject: {fileID: 1248261865}
 --- !u!1001 &6614261706168710368
 PrefabInstance:
   m_ObjectHideFlags: 0
