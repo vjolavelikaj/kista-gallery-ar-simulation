@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
+//[RequireComponent(typeof(NavMeshAgent))]
 
 public class Spawner : MonoBehaviour
 {
@@ -23,6 +26,7 @@ public class Spawner : MonoBehaviour
 	Transform startPosition;
 
 	private AgentCharacteristics agentCharacteristics;
+	private ScaleNavigator scaleNavigator;
 
 	// Start is called before the first frame update
 	void Start()
@@ -50,7 +54,18 @@ public class Spawner : MonoBehaviour
 		character = charGameObjects[Random.Range(0, charGameObjects.Count)];
 		startPosition = startGameObjects[Random.Range(0, startGameObjects.Count)];
 		var iniCharacter = GameObject.Instantiate(character, startPosition.position, startPosition.rotation);
+		iniCharacter.transform.parent = targetModel.transform;
 		agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics>();
 		agentCharacteristics.startPoint = startPosition;
+		iniCharacter.SetActive(true);
+
+		var lowScaleCharacter = GameObject.Instantiate(iniCharacter, startPosition.position, startPosition.transform.rotation);
+		Destroy(lowScaleCharacter.GetComponent<AgentCharacteristics>());
+		Destroy(lowScaleCharacter.GetComponent<NavMeshAgent>());
+		lowScaleCharacter.transform.parent = targetModel.transform;
+		lowScaleCharacter.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
+		scaleNavigator.bigScaleObject = iniCharacter;
 	}
 }
