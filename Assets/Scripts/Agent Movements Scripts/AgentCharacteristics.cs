@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ public class AgentCharacteristics : MonoBehaviour
 	public RuntimeAnimatorController movement;
 	public bool destroyActive;
 	public GameObject startButton;
+	public GameObject queueControlGameObject;
 	public GameObject removeCharactersGameObject;
 
 	private float startSpeed;
@@ -28,7 +30,10 @@ public class AgentCharacteristics : MonoBehaviour
 	private int currentTarget;
 	private bool targetExists;
 	private bool isWaiting;
+	private bool isAddedToQueue;
+	private QueueControl queueControl;
 	private RemoveCharacters removeCharacters;
+	private float atmUserPosition;
 
 	Vector3 destination;
 	Transform targetDestination;
@@ -36,10 +41,20 @@ public class AgentCharacteristics : MonoBehaviour
 
 	void Start()
 	{
+
 		// Cache agent component and destination
+		isAddedToQueue = false;
 		isWaiting = false;
 		removeCharacters = removeCharactersGameObject.GetComponent<RemoveCharacters>();
 		agent = GetComponent<NavMeshAgent>();
+		queueControl = queueControlGameObject.GetComponent<QueueControl>();
+		///Queue
+		/*if (agent.gameObject.name.Contains("ATM"))
+		{
+			queueControl.AddToQueue(agent.gameObject);
+			//atmUserPosition = queueControl.atmUsers.Count;
+		}*/
+		//End Queue isAddedToQueue
 		removeCharacters.AddCharacter(agent);
 
 		animator = GetComponent<Animator>();
@@ -66,10 +81,10 @@ public class AgentCharacteristics : MonoBehaviour
 	{
 		if (startButton.transform.transform.tag == "Pause")
 		{
+
 			if (!isWaiting)
 			{
-				agent.isStopped = false;
-				animator.runtimeAnimatorController = movement;
+				StartAnimation();
 			}
 
 			// Update destination if the target moves one unit
@@ -79,62 +94,115 @@ public class AgentCharacteristics : MonoBehaviour
 				agent.destination = destination;
 			}
 
-			// Check if we've reached the destination
-			// https://answers.unity.com/questions/324589/how-can-i-tell-when-a-navmesh-has-reached-its-dest.html
-			// https://stackoverflow.com/questions/60810676/unity-navmesh-event-on-navigation-end
-			if (agent.remainingDistance <= 1)
-			{
-				animator.runtimeAnimatorController = idle;
-				StartCoroutine(stopSomeSeconds());
 
-				if (targetExists)
+			//Queue
+			if (agent.gameObject.name.Contains("ATM") && !isAddedToQueue)
+			{
+				if (agent.remainingDistance <= 6)
 				{
-					if (numberOfTargets != 0 && currentTarget + 1 < numberOfTargets)
-					{
-						currentTarget++;
-						targetDestination = targetsGameObjects[currentTarget];
-					}
-					else
+					if (queueControl.atmUsers.Count < 6)
 					{
 						targetExists = false;
 						exitGameObjects.Remove(startPoint);
 						targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
 					}
+					else
+					{
+						queueControl.AddToQueue(agent.gameObject);
+						isAddedToQueue = true;
+					}
+				}
+			}
 
-					agent.SetDestination(targetDestination.position);
+			atmUserPosition = queueControl.atmUsers.ToArray().ToList().IndexOf(agent.gameObject) + 1;
+
+			if (agent.gameObject.name.Contains("ATM") && atmUserPosition > 1)
+			{
+				if (agent.remainingDistance <= (atmUserPosition * 2))
+				{
+					StopAnimation();
 				}
 				else
 				{
-					DestroyAgent(agent);
+					StartAnimation();
+				}
+			}
+			else
+			{
+			//End Queue
+
+
+
+				// Check if we've reached the destination
+				// https://answers.unity.com/questions/324589/how-can-i-tell-when-a-navmesh-has-reached-its-dest.html
+				// https://stackoverflow.com/questions/60810676/unity-navmesh-event-on-navigation-end
+				if (agent.remainingDistance <= 1)
+				{
+					
+					animator.runtimeAnimatorController = idle;
+					StartCoroutine(stopSomeSeconds());
+
+					if (targetExists)
+					{
+						if (numberOfTargets != 0 && currentTarget + 1 < numberOfTargets)
+						{
+							currentTarget++;
+							targetDestination = targetsGameObjects[currentTarget];
+						}
+						else
+						{
+							targetExists = false;
+							exitGameObjects.Remove(startPoint);
+							targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
+						}
+
+						agent.SetDestination(targetDestination.position);
+					}
+					else
+					{
+						DestroyAgent(agent);
+					}
+
 				}
 
-			}
-
-			if (slowOrFaster)
-			{
-				agent.speed = startSpeed;
+				if (slowOrFaster)
+				{
+					agent.speed = startSpeed;
+				}
 			}
 		}
 		else
 		{
-			agent.isStopped = true;
-			animator.runtimeAnimatorController = idle;
+			StopAnimation();
 		}
 		
 	}
 
 	IEnumerator stopSomeSeconds()
 	{
-		agent.isStopped = true;
-		animator.runtimeAnimatorController = idle;
+		StopAnimation();
 		isWaiting = true;
-		yield return new WaitForSeconds(2); 
-		agent.isStopped = false;
-		animator.runtimeAnimatorController = movement;
+		yield return new WaitForSeconds(2);
+		//Queue
+		if (agent.gameObject.name.Contains("ATM"))
+		{
+			queueControl.RemoveFromQueue();
+		}
+		//End Queue
+		StartAnimation();
 		isWaiting = false;
 	}
 
-	
+	void StopAnimation()
+	{
+		agent.isStopped = true;
+		animator.runtimeAnimatorController = idle;
+	}
+	void StartAnimation()
+	{
+		agent.isStopped = false;
+		animator.runtimeAnimatorController = movement;
+	}
 
 	public void DestroyAgent(NavMeshAgent nmAgent)
 	{

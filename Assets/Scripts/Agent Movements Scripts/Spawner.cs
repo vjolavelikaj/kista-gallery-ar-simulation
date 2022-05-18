@@ -22,6 +22,8 @@ public class Spawner : MonoBehaviour
 
 	public GameObject startButton;
 
+	public GameObject queueControlGameObject;
+
 	// Transform agentPosition;
 	GameObject character;
 
@@ -30,11 +32,14 @@ public class Spawner : MonoBehaviour
 
 	private AgentCharacteristics agentCharacteristics;
 	private ScaleNavigator scaleNavigator;
+	//private QueueControl queueControl;
+
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		InvokeRepeating("SpawnChar", 1f, interval);
+		//InvokeRepeating("SpawnChar", 1f, interval);
+		//queueControl = queueControlGameObject.GetComponent<QueueControl>();
 	}
 
 	private bool IsModelTracked()
@@ -58,8 +63,9 @@ public class Spawner : MonoBehaviour
 		iniCharacter.transform.parent = targetModel.transform;
 		agentCharacteristics = iniCharacter.GetComponent<AgentCharacteristics>();
 		agentCharacteristics.startPoint = startPosition;
+		agentCharacteristics.queueControlGameObject = queueControlGameObject;
 		iniCharacter.SetActive(true);
-
+		
 		var lowScaleCharacter = GameObject.Instantiate(iniCharacter, startPosition.position, startPosition.transform.rotation);
 		Destroy(lowScaleCharacter.GetComponent<AgentCharacteristics>());
 		Destroy(lowScaleCharacter.GetComponent<NavMeshAgent>());

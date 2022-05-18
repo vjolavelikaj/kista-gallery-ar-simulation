@@ -12,6 +12,7 @@ public class StopSimulation : MonoBehaviour
     private StopWatch stopWatch;
     private PlayPauseIconChanger playPauseIconChanger;
 
+
     void Start()
     {
         stopWatch = stopWatchObject.GetComponent<StopWatch>();

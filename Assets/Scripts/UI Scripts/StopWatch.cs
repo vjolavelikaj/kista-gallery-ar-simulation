@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class StopWatch : MonoBehaviour
 
     private Text textClock;
     private float timeStart;
+    private TimeSpan time;
 
     void Start()
     {
@@ -23,7 +25,9 @@ public class StopWatch : MonoBehaviour
             timeStart += Time.deltaTime;
         }
 
-        textClock.text = timeStart.ToString("F2");
+        time = TimeSpan.FromSeconds(timeStart);
+        textClock.text = time.ToString(@"mm\:ss");
+        //string str = time.ToString(@"hh\:mm\:ss\:fff");
     }
 
 	public void ResetTimer()
