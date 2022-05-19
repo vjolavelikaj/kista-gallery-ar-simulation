@@ -29,6 +29,7 @@ public class AgentCharacteristics : MonoBehaviour
 	private int numberOfTargets;
 	private int currentTarget;
 	private bool targetExists;
+	private bool isExiting;
 	private bool isWaiting;
 	private bool isAddedToQueue;
 	private QueueControl queueControl;
@@ -63,17 +64,15 @@ public class AgentCharacteristics : MonoBehaviour
 		numberOfTargets = targetsGameObjects.Count;
 		if (numberOfTargets == 0)
 		{
-			targetExists = false;
-			exitGameObjects.Remove(startPoint);
-			targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
-			agent.SetDestination(targetDestination.position);
+			GoToExit();
+			isExiting = true;
 		}
 		else
 		{
 			targetExists = true;
 			currentTarget = 0;
 			targetDestination = targetsGameObjects[0];
-			agent.SetDestination(targetDestination.position);
+			agent.SetDestination(targetDestination.localPosition);
 		}
 	}
 
@@ -81,44 +80,55 @@ public class AgentCharacteristics : MonoBehaviour
 	{
 		if (startButton.transform.transform.tag == "Pause")
 		{
-
 			if (!isWaiting)
 			{
 				StartAnimation();
 			}
 
 			// Update destination if the target moves one unit
+
 			if (Vector3.Distance(destination, targetDestination.position) > 1)
 			{
 				destination = targetDestination.position;
 				agent.destination = destination;
 			}
 
+			// If ATM is not tracked
+			if (agent.gameObject.name.Contains("ATM") && !isExiting)
+			{
+				if (!targetDestination.gameObject.activeSelf)
+				{
+					GoToExit();
+				}
+				else
+				{
+					targetDestination = targetsGameObjects[0];
+					agent.destination = targetDestination.position;
+				}
+				
+			}
+			// End
 
 			//Queue
-			if (agent.gameObject.name.Contains("ATM") && !isAddedToQueue)
+			if (targetDestination.gameObject.name.Contains("ATM") && !isAddedToQueue && agent.remainingDistance <= 6)
 			{
-				if (agent.remainingDistance <= 6)
+				if (queueControl.atmUsers.Count > 6)
 				{
-					if (queueControl.atmUsers.Count < 6)
-					{
-						targetExists = false;
-						exitGameObjects.Remove(startPoint);
-						targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
-					}
-					else
-					{
-						queueControl.AddToQueue(agent.gameObject);
-						isAddedToQueue = true;
-					}
+					GoToExit();
+					isExiting = true;
+				}
+				else
+				{
+					queueControl.AddToQueue(agent.gameObject);
+					isAddedToQueue = true;
 				}
 			}
 
 			atmUserPosition = queueControl.atmUsers.ToArray().ToList().IndexOf(agent.gameObject) + 1;
 
-			if (agent.gameObject.name.Contains("ATM") && atmUserPosition > 1)
+			if (targetDestination.gameObject.name.Contains("ATM") && atmUserPosition > 1)
 			{
-				if (agent.remainingDistance <= (atmUserPosition * 2))
+				if (agent.remainingDistance <= (atmUserPosition * 1.5))
 				{
 					StopAnimation();
 				}
@@ -147,13 +157,15 @@ public class AgentCharacteristics : MonoBehaviour
 						if (numberOfTargets != 0 && currentTarget + 1 < numberOfTargets)
 						{
 							currentTarget++;
+
 							targetDestination = targetsGameObjects[currentTarget];
+							targetDestination = targetsGameObjects[currentTarget].transform;
+							agent.SetDestination(targetDestination.position);
 						}
 						else
 						{
-							targetExists = false;
-							exitGameObjects.Remove(startPoint);
-							targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
+							GoToExit();
+							isExiting = true;
 						}
 
 						agent.SetDestination(targetDestination.position);
@@ -202,6 +214,14 @@ public class AgentCharacteristics : MonoBehaviour
 	{
 		agent.isStopped = false;
 		animator.runtimeAnimatorController = movement;
+	}
+
+	void GoToExit()
+	{
+		targetExists = false;
+		exitGameObjects.Remove(startPoint);
+		targetDestination = exitGameObjects[UnityEngine.Random.Range(0, exitGameObjects.Count)];
+		agent.SetDestination(targetDestination.position);
 	}
 
 	public void DestroyAgent(NavMeshAgent nmAgent)

@@ -25,6 +25,7 @@ public class TakeScreenShot : MonoBehaviour
 		string filePath = Path.Combine(GetAndroidExternalStoragePath(), "Tanks" + timeStamp + ".png");
 		File.WriteAllBytes(filePath, ss.EncodeToPNG());
 		blink.Play(blinkCondition, 0, 0);
+		//Handheld.Vibrate();
 	}
 
 	private string GetAndroidExternalStoragePath()

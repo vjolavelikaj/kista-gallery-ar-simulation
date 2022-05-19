@@ -40,7 +40,7 @@ public class ScaleNavigator : MonoBehaviour
 
         if (other.CompareTag("SlowDown"))
         {
-            agent.speed /= 2;
+            agent.speed = 1;
         }
 
         if (other.CompareTag("NormalDoor"))
@@ -50,7 +50,7 @@ public class ScaleNavigator : MonoBehaviour
 
         if (other.CompareTag("SpeedUp"))
         {
-            agent.speed *= 2;
+            agent.speed = 4;
         }
 
         if (other.CompareTag("AutoDoor"))

@@ -32,6 +32,7 @@ public class Spawner : MonoBehaviour
 
 	private AgentCharacteristics agentCharacteristics;
 	private ScaleNavigator scaleNavigator;
+	private PlayPauseIconChanger playPauseIconChanger;
 	//private QueueControl queueControl;
 
 
@@ -40,6 +41,18 @@ public class Spawner : MonoBehaviour
 	{
 		//InvokeRepeating("SpawnChar", 1f, interval);
 		//queueControl = queueControlGameObject.GetComponent<QueueControl>();
+		playPauseIconChanger = startButton.GetComponent<PlayPauseIconChanger>();
+}
+
+	private void Update()
+	{
+		/*if (IsModelTracked() && startButton.transform.transform.tag == "Pause" && playPauseIconChanger.fistTimeStart)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				SpawnChar();
+			}
+		}*/
 	}
 
 	private bool IsModelTracked()
@@ -65,12 +78,16 @@ public class Spawner : MonoBehaviour
 		agentCharacteristics.startPoint = startPosition;
 		agentCharacteristics.queueControlGameObject = queueControlGameObject;
 		iniCharacter.SetActive(true);
-		
+
 		var lowScaleCharacter = GameObject.Instantiate(iniCharacter, startPosition.position, startPosition.transform.rotation);
 		Destroy(lowScaleCharacter.GetComponent<AgentCharacteristics>());
 		Destroy(lowScaleCharacter.GetComponent<NavMeshAgent>());
 		lowScaleCharacter.transform.parent = targetModel.transform;
 		lowScaleCharacter.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+		foreach (Transform trans in lowScaleCharacter.GetComponentsInChildren<Transform>(true))
+		{
+			trans.gameObject.layer = 0;
+		}
 
 		scaleNavigator = lowScaleCharacter.AddComponent<ScaleNavigator>();
 		scaleNavigator.bigScaleObject = iniCharacter;

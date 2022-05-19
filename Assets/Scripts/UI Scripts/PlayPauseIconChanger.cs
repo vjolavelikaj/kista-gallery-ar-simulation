@@ -31,11 +31,7 @@ public class PlayPauseIconChanger : MonoBehaviour, IPointerDownHandler
 			transform.transform.tag = "Pause";
 			if (fistTimeStart)
 			{
-				for (int i = 0; i < 10; i++)
-				{
-					spawner.SpawnChar();
-				}
-
+				StartCoroutine(SpawnChar());
 				fistTimeStart = false;
 			}
 		}
@@ -62,6 +58,15 @@ public class PlayPauseIconChanger : MonoBehaviour, IPointerDownHandler
 			GetComponent<Image>().sprite = pausePressed;
 		}
 	}
+
+	IEnumerator SpawnChar()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			spawner.SpawnChar();
+			yield return new WaitForSeconds(0.2f);
+		}
+	}	
 	public void ResetButton()
 	{
 		GetComponent<Image>().sprite = play;
