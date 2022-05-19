@@ -105,12 +105,11 @@ public class AgentCharacteristics : MonoBehaviour
 					targetDestination = targetsGameObjects[0];
 					agent.destination = targetDestination.position;
 				}
-				
 			}
 			// End
 
 			//Queue
-			if (targetDestination.gameObject.name.Contains("ATM") && !isAddedToQueue && agent.remainingDistance <= 6)
+			if (targetDestination.gameObject.name.Contains("ATM") && !isAddedToQueue && agent.remainingDistance <= 5)
 			{
 				if (queueControl.atmUsers.Count > 6)
 				{
@@ -128,7 +127,7 @@ public class AgentCharacteristics : MonoBehaviour
 
 			if (targetDestination.gameObject.name.Contains("ATM") && atmUserPosition > 1)
 			{
-				if (agent.remainingDistance <= (atmUserPosition * 1.5))
+				if (agent.remainingDistance <= (atmUserPosition * 2))
 				{
 					StopAnimation();
 				}
@@ -140,7 +139,6 @@ public class AgentCharacteristics : MonoBehaviour
 			else
 			{
 			//End Queue
-
 
 
 				// Check if we've reached the destination
