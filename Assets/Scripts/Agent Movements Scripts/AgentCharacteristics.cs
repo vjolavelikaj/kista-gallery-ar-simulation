@@ -66,9 +66,11 @@ public class AgentCharacteristics : MonoBehaviour
 		{
 			GoToExit();
 			isExiting = true;
+			targetExists = false;
 		}
 		else
 		{
+			isExiting = false;
 			targetExists = true;
 			currentTarget = 0;
 			targetDestination = targetsGameObjects[0];
@@ -99,6 +101,11 @@ public class AgentCharacteristics : MonoBehaviour
 				if (!targetDestination.gameObject.activeSelf)
 				{
 					GoToExit();
+					if (isAddedToQueue)
+					{
+						queueControl.RemoveFromQueue();
+						isAddedToQueue = false;
+					}
 				}
 				else
 				{

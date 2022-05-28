@@ -22,4 +22,9 @@ public class QueueControl : MonoBehaviour
         atmUsers.Dequeue();
     }
 
+    public void EmptyQueue()
+    {
+        atmUsers.Clear();
+    }
+
 }
